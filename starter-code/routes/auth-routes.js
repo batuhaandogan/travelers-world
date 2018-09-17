@@ -45,7 +45,7 @@ router.get("/signup", (req, res, next) => {
           res.render("auth/signup", { message: "Something went wrong" });
         } else {
 
-          res.render("/");
+          res.render("auth/signup");
         }
       });
     })
