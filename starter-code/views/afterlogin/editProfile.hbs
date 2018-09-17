@@ -1,0 +1,30 @@
+<h2>Edit your profile</h2><br>
+
+
+<form action="/profiles/edit/{{profile._id}}" method="POST">
+
+
+    <label for="">First name</label>
+    <input type="text" name="firstname" value="{{profile.firstname}}">
+
+    <label for="">Lastname</label>
+    <input type="text" name="lastname" value="{{profile.lastname}}">
+
+    <label for="">Email</label>
+    <input type="email" name="email" value="{{profile.email}}">
+
+     {{!-- <label>Poster</label>
+  <input type="file" name="photo" alt=""> --}}
+
+{{!-- <a href="/profiles/edit/{{theUser._id}}"> --}}
+    <button>Submit</button>
+
+{{!-- </a> --}}
+
+</form>
+{{!-- <a href="/private"> --}}
+{{!-- </a> --}}
+<br>
+<a href="/private">Profile</a>
+
+

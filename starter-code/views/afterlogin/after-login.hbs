@@ -4,7 +4,17 @@
  
  <header>
         <div class="name ">
-           Name
+           <h1>Profile</h1>
+
+{{!-- <p>Username: {{theUser.username}}</p> --}}
+<p>First Name: {{theUser.firstname}}</p>
+<p>Last Name: {{theUser.lastname}}</p>
+<p>Email: {{theUser.email}}</p>
+
+
+       <a href="/profiles/edit/{{theUser._id}}">
+           <button>Update</button>
+       </a>
         </div>
 
         <div class="ava">
@@ -16,7 +26,7 @@
         <aside class="info ">
             <div class="box">
                 <p class="title">
-                    <i class="fa fa-info-circle"></i>Contact
+                    <i class="fa fa-info-circle"></i>Contact me
                 </p>
 
 
@@ -75,7 +85,7 @@
             <div class="box">
                 <p class="title">
                     <i class="fa fa-graduation-cap"></i>
-                    Education
+                    Summary
                 </p>
                 <p class="padd-top">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, maxime obcaecati enim illo dolorem, recusandae eum! Quasi natus quaerat aspernatur hic, maxime necessitatibus, quo voluptatem veritatis excepturi error sit vero deleniti laborum alias, expedita nostrum. Mollitia doloribus voluptates explicabo quidem.

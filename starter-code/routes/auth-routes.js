@@ -56,9 +56,16 @@ router.get("/signup", (req, res, next) => {
       })
   });  
 
-  // router.get("/login", (req, res, next) => {
-  //   res.render("auth/login");
-  // });
+
+
+
+ 
+
+
+  router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
+    console.log(req.user);
+    res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user})
+  })
   
   router.post("/login", passport.authenticate("local", {
     successRedirect: "/private",
@@ -66,6 +73,39 @@ router.get("/signup", (req, res, next) => {
     failureFlash: true,
     passReqToCallback: true
   }));
+
+
+
+  router.get('/profiles/edit/:profileid', (req, res, next)=>{
+    User.findById(req.params.profileid)
+    .then((theProfile)=>{
+        res.render('afterlogin/editProfile', {profile: theProfile});
+    })
+    .catch((err)=>{
+        next(err);
+    })
+})
+
+
+router.post('/profiles/edit/:id', (req, res, next)=>{
+     User.findByIdAndUpdate(req.params.id, {
+         firstname: req.body.firstname,
+         lastname: req.body.lastname,
+         email: req.body.email,
+
+     })
+     .then((response)=>{
+         res.redirect('/private')
+     })
+     .catch((err)=>{
+        next(err);
+     })
+ 
+     console.log('body:', req.body)
+ 
+ })
+
+
   
   router.get("/login", (req, res, next) => {
     res.render("auth/login", { message: req.flash("error") });

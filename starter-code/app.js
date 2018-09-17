@@ -112,4 +112,8 @@ app.use('/', index);
 const authRoutes = require("./routes/auth-routes");
 app.use('/', authRoutes);
 
+
+// const edit = require('afterlogin/editPorfile')
+// app.use('/', edit)
+
 module.exports = app;
