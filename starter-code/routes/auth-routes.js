@@ -60,28 +60,28 @@ router.get("/signup", (req, res, next) => {
   });
 
 
-  router.get("/login", (req, res, next) => {
-    res.render("auth/login");
-  });
+  // router.get("/login", (req, res, next) => {
+  //   res.render("auth/login");
+  // });
   
   router.post("/login", passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/private",
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
   }));
   
   router.get("/login", (req, res, next) => {
-    res.render("auth/login", { "message": req.flash("error") });
+    res.render("auth/login", { message: req.flash("error") });
   });
 
   router.get("/private", ensureLogin.ensureLoggedIn(), (req, res) => {
-    res.render("private", { user: req.user });
+    res.render("afterlogin/after-login", { user: req.user });
   });
 
   router.get("/logout", (req, res) => {
     req.logout();
-    res.redirect("/login");
+    res.redirect("/");
   });
 
 
