@@ -1,8 +1,5 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
-}
+// 
+
 
 
 a {
@@ -81,6 +78,7 @@ header .name{
    display: table-cell;
    vertical-align: middle;
    width:50%;
+   
 }
 .ava img{
    position: relative;
@@ -263,4 +261,18 @@ footer{
   //  height:60px;   /* Height of the footer */
    background:#6cf;
   //  position: relative;
+}
+
+
+
+header {
+  flex-shrink: 0;
+}
+.body{
+  flex-grow: 1;
+  overflow: auto;
+  min-height: 2em;
+}
+footer{
+  flex-shrink: 0;
 }

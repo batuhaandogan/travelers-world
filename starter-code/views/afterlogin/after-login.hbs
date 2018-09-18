@@ -31,26 +31,31 @@
 
 
                 <p class="padd-top">
-                    <i class="fa fa-birthday-cake"></i>
-                    2-2-2222
+                    {{!-- <i class="fa fa-birthday-cake"></i>
+                    2-2-2222 --}}
+                    {{!-- <input  type="date" name="birthday"> --}}
+                    {{theContacter.date}}
                 </p>
 
                 <p>
-                    <i class="fa fa-phone"></i>
-                    0123456789
+                    {{!-- <i class="fa fa-phone"></i> --}}
+                    {{!-- <input type="number" name="phone-no"> --}}
+                    {{theContacter.contact}}
                 </p>            
 
-                <p>
-                    <i  class="fa fa-envelope"></i>
-                    qwerty@gmail.com
-                </p>                
+              
 
                 <p>
-                    <i class="fa fa-home"></i>
-                    123 lorem ipsum, 
-                </p>                
+                    {{!-- <i class="fa fa-home"></i> --}}
+                    {{!-- <input type="text" name="home-address"> --}}
+                    {{theContacter.address}}
+                </p>     
 
+                <a href="/contact/edit/{{theContacter._id}}">
+                  <button>Edit</button>
+                </a>           
             </div> 
+
 
             <div class="box">
 
@@ -79,6 +84,19 @@
             </div>  
 
         </aside>
+
+        {{!-- <h1>Welcome to the Movie Project</h1>
+<div class="movies-wrapper">
+  {{#each movies}}
+    <div class="movie-item">
+      <img src="{{this.imgPath}}" alt="">
+      <h4>{{this.title}}</h4>
+      <p >{{this.description}}</p>
+    </div>
+  {{else}}
+    <p>There are no movies yet! :(</p>
+  {{/each}}
+</div> --}}
 
 
         <section class="main">

@@ -21,6 +21,8 @@ router.get("/signup", (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
+    // const image: req.file.url,
+    // const imgPath: req.file.originalname,
     if (username === "" || password === "") {
       res.render("auth/signup", { message: "Indicate username and password" });
       return;
@@ -104,6 +106,39 @@ router.post('/profiles/edit/:id', (req, res, next)=>{
      console.log('body:', req.body)
  
  })
+
+ router.get('/editContact' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
+  console.log(req.user);
+  res.render('afterlogin/editContact', {message: req.flash('success'), theContacter: req.user})
+})
+
+ router.get('/contact/edit/:contactid', (req, res, next)=>{
+  User.findById(req.params.profileid)
+  .then((theContact)=>{
+      res.render('afterlogin/editContact', {contact: theContact});
+  })
+  .catch((err)=>{
+      next(err);
+  })
+})
+
+
+router.post('/contact/edit/:id', (req, res, next)=>{
+   User.findByIdAndUpdate(req.params.id, {
+       contact: req.body.contact,
+       date: req.body.birthday,
+       address: req.body.address,
+   })
+   .then((response)=>{
+       res.redirect('/editContact')
+   })
+   .catch((err)=>{
+      next(err);
+   })
+
+   console.log('body:', req.body)
+
+})
 
 
   

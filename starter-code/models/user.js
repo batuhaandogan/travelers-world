@@ -8,7 +8,10 @@ const userSchema = new Schema({
   password: String,
   email: String,
   slackID: String,
-  googleID: String
+  googleID: String,
+  date: Number,
+  contact: Number,
+  address: String,
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

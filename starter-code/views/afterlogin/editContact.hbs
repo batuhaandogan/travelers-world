@@ -1,0 +1,27 @@
+<h2>Edit contacts</h2><br>
+
+
+<form action="/contact/edit/{{contact._id}}" method="POST">
+
+
+    {{!-- <label for="">First name</label> --}}
+    <input type="date" name="birthday" value="{{contact.date}}">
+
+    {{!-- <label for="">Lastname</label> --}}
+    <input type="number" name="phone-no" value="{{contact.contact}}">
+
+    {{!-- <label for="">Email</label> --}}
+    <input type="text" name="home-address" value="{{contact.address}}">
+{{!-- 
+     <label>Poster</label>
+  <input type="file" name="photo" alt=""> --}}
+
+{{!-- <a href="/profiles/edit/{{theUser._id}}"> --}}
+    <button>Submit</button>
+
+{{!-- </a> --}}
+
+</form>
+
+<br><br>
+<a href="/private">Profile</a>

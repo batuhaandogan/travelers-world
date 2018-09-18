@@ -6,6 +6,8 @@ const profileSchema = new Schema({
   lastname: String,
   email: String,
   username: String,
+  imgPath: String,
+  image: String,
 }, {
   timestamps: {
     createdAt: "created_at",

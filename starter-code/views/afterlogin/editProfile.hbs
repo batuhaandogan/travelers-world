@@ -1,7 +1,7 @@
 <h2>Edit your profile</h2><br>
 
 
-<form action="/profiles/edit/{{profile._id}}" method="POST">
+<form action="/profiles/edit/{{profile._id}}" method="POST" enctype="multipart/form-data">
 
 
     <label for="">First name</label>
@@ -13,8 +13,8 @@
     <label for="">Email</label>
     <input type="email" name="email" value="{{profile.email}}">
 
-     {{!-- <label>Poster</label>
-  <input type="file" name="photo" alt=""> --}}
+     <label>Poster</label>
+  <input type="file" name="photo" alt="">
 
 {{!-- <a href="/profiles/edit/{{theUser._id}}"> --}}
     <button>Submit</button>
