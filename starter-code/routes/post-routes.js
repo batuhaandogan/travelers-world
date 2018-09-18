@@ -28,13 +28,13 @@ Post.find()
      res.render('create-post/createPost')
 
         })
-     
       
       
 router.post('/createPost', uploadCloud.single('photo'), (req, res, next)=>{
 Post.create({
     content: req.body.content,
     imgPath: req.file.url,
+    owner: req.user._id
 })
   .then((response)=>{
       console.log("this is the response=-=-=-=-=-=-=-=-=-=-=-=-=-=",response)

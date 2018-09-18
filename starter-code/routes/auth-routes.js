@@ -9,13 +9,20 @@ const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 const ensureLogin = require("connect-ensure-login");
 const Post = require("../models/post") 
+const uploadCloud = require('../config/cloudinary.js');
+
+
+
+
+
+
 
 router.get("/signup", (req, res, next) => {
     res.render("auth/signup");
   });
   
 
-  router.post("/signup", (req, res, next) => {
+  router.post("/signup", uploadCloud.single('photo'), (req, res, next) => {
     const firstname = req.body.firstname;
     const lastname = req.body.lastname;
     const username = req.body.username;
@@ -44,6 +51,7 @@ router.get("/signup", (req, res, next) => {
             lastname: lastname,
             email: email,
             username: username,
+            imgPath: req.file.url,
             password: hashPass
         })
         .then((response)=>{
@@ -66,7 +74,7 @@ router.get("/signup", (req, res, next) => {
 
   router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
     console.log(req.user);
-    Post.find()
+    Post.find({owner:req.user._id})
     .then((thePostsIGet)=>{
       
       res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet })
@@ -94,21 +102,26 @@ router.get("/signup", (req, res, next) => {
 
 
 router.post('/profiles/edit/:id', (req, res, next)=>{
-     User.findByIdAndUpdate(req.params.id, {
-         firstname: req.body.firstname,
-         lastname: req.body.lastname,
-         email: req.body.email,
+  console.log('========req.body = = = == = == = =', req.body)
 
-     })
+const updates = {
+  firstname: req.body.firstname,
+  lastname: req.body.lastname,
+  email: req.body.email,
+}
+if(req.file){
+  updates.imgPath = req.body.url
+}
+
+console.log('updates: ', updates)
+
+     User.findByIdAndUpdate(req.params.id, updates)
      .then((response)=>{
          res.redirect('/private')
      })
      .catch((err)=>{
         next(err);
-     })
- 
-     console.log('body:', req.body)
- 
+     }) 
  })
 
  router.get('/editContact' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
