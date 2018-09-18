@@ -6,26 +6,16 @@
     <input type="text" name="title">
 
 
-    <label for="">Genre</label>
-    <input type="text" name="genre">
-
-    <label for="">Plot</label>
-    <input type="text" name="plot">
-
-    <label for="">Main Star</label>
-    <select name="name">
-        {{#each movie}}
-      <option value="{{this._id}}">{{this.name}}</option>
-        {{/each}}
-    </select>
+      <label for="">Content</label>
+    <input type="text" name="content">
 
     <label>Poster</label>
-  <input type="file" name="photo">
-
-    <button>Submit</button>
+    
+   <input type="file" name="photo">
+   <input type="submit" value="SAVE">
 
 <br>
-<a href="/">See the list</a>
+<a href="/private">See the list</a>
 
 
 </form>

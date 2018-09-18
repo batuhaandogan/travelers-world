@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
+
 const postSchema = new Schema({
-  picture:String,
+//   picture:String,
   content: String,
   comments:  {type: Schema.Types.ObjectId, ref: "comments"},
   imgName: String,

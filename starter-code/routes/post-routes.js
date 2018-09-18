@@ -8,6 +8,7 @@ const Post = require("../models/post")
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 const ensureLogin = require("connect-ensure-login");
+const uploadCloud = require('../config/cloudinary.js');
 
 
 router.get('/post/new', (req,res,next)=>{
@@ -30,20 +31,18 @@ Post.find()
      
       
       
-        // , uploadCloud.single('photo')
-    
-
-router.post('/createPost', (req, res, next)=>{
-  Post.create({
-      title: req.body.title,
-      
-      imgPath: req.file.url,
-      imgName: req.file.originalname,
-  })
+router.post('/createPost', uploadCloud.single('photo'), (req, res, next)=>{
+    const { content } = req.body;
+    const imgPath = req.file.url;
+    const imgName = req.file.originalname;
+    const newPost = new Post({content, imgPath, imgName})
+newPost.save()
   .then((response)=>{
-      res.redirect('/movies')
+      console.log("this is the response=-=-=-=-=-=-=-=-=-=-=-=-=-=",response)
+      res.render('afterlogin/after-login')
   })
   .catch((err)=>{
+      console.log('error error error error error error error ',err)
       next(err);
   })
 })
