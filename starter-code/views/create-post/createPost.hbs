@@ -1,0 +1,31 @@
+
+<form action="/createPost" method="POST" enctype="multipart/form-data">
+
+
+    <label for="">Title</label>
+    <input type="text" name="title">
+
+
+    <label for="">Genre</label>
+    <input type="text" name="genre">
+
+    <label for="">Plot</label>
+    <input type="text" name="plot">
+
+    <label for="">Main Star</label>
+    <select name="name">
+        {{#each movie}}
+      <option value="{{this._id}}">{{this.name}}</option>
+        {{/each}}
+    </select>
+
+    <label>Poster</label>
+  <input type="file" name="photo">
+
+    <button>Submit</button>
+
+<br>
+<a href="/">See the list</a>
+
+
+</form>

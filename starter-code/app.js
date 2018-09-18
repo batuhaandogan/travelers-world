@@ -106,11 +106,15 @@ passport.use(new LocalStrategy((username, password, next) => {
 const index = require('./routes/index');
 app.use('/', index);
 
-// const landing = require('./vendor')
-// app.use('/landing', landing)
-
 const authRoutes = require("./routes/auth-routes");
 app.use('/', authRoutes);
+
+const post = require('./routes/post-routes')
+app.use('/', post)
+
+const comments = require('./routes/comments-routes')
+app.use('/', comments)
+
 
 
 // const edit = require('afterlogin/editPorfile')

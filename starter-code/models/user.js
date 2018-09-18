@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema   = mongoose.Schema;
 
+const Post = "./post.js"
 const userSchema = new Schema({
   firstname: String,
   lastname: String,
@@ -12,6 +13,7 @@ const userSchema = new Schema({
   date: Number,
   contact: Number,
   address: String,
+  post: {type: Schema.Types.ObjectId, ref: "post"},
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });

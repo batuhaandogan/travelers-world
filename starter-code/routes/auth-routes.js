@@ -112,6 +112,7 @@ router.post('/profiles/edit/:id', (req, res, next)=>{
   res.render('afterlogin/editContact', {message: req.flash('success'), theContacter: req.user})
 })
 
+//update the user GET
  router.get('/contact/edit/:contactid', (req, res, next)=>{
   User.findById(req.params.profileid)
   .then((theContact)=>{
@@ -122,7 +123,7 @@ router.post('/profiles/edit/:id', (req, res, next)=>{
   })
 })
 
-
+//update the user POST
 router.post('/contact/edit/:id', (req, res, next)=>{
    User.findByIdAndUpdate(req.params.id, {
        contact: req.body.contact,
@@ -139,6 +140,10 @@ router.post('/contact/edit/:id', (req, res, next)=>{
    console.log('body:', req.body)
 
 })
+
+
+
+
 
 
   

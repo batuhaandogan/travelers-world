@@ -204,4 +204,9 @@ header {
 footer {
   flex-shrink: 0; }
 
+#create-post {
+  padding-left: 300px;
+  font-size: 30px;
+  color: red; }
+
 /*# sourceMappingURL=style.css.map */
