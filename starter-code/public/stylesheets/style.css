@@ -7,7 +7,7 @@ a {
   position: relative;
   box-sizing: border-box;
   font-size: 20px;
-  font-family: 'roboto',sans-serif; }
+  font-family: fantasy; }
 
 .content {
   max-width: 1110px;
@@ -34,17 +34,15 @@ header .name {
 .ava {
   overflow: auto;
   display: table-cell;
-  vertical-align: middle;
-  width: 50%; }
+  vertical-align: middle; }
 
 .ava img {
   position: relative;
-  float: right;
   right: 0.5em;
-  border: 2px solid white;
-  width: 180px;
   height: auto;
-  border-radius: 50px; }
+  border-radius: 50px;
+  padding-top: 10px;
+  padding-left: 20px; }
 
 aside {
   float: left;
@@ -208,5 +206,14 @@ footer {
   padding-left: 300px;
   font-size: 30px;
   color: red; }
+
+.the-main-post {
+  border: 1px solid white;
+  background-color: rgba(113, 154, 221, 0.2); }
+
+.the-main-post > img {
+  width: 701px;
+  height: 321px;
+  padding-left: 73px; }
 
 /*# sourceMappingURL=style.css.map */

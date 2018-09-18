@@ -1,106 +1,14 @@
- <navbar>
-     <a href="/logout">Log out</a>
- </navbar>
+
  
  <header>
-        <div class="name ">
-           <h1>Profile</h1>
-
-{{!-- <p>Username: {{theUser.username}}</p> --}}
-<p>First Name: {{theUser.firstname}}</p>
-<p>Last Name: {{theUser.lastname}}</p>
-<p>Email: {{theUser.email}}</p>
-
-
-       <a href="/profiles/edit/{{theUser._id}}">
-           <button>Update</button>
-       </a>
-       
-        </div>
-         <a href="createPost" id="create-post">
-        Create a post
-         </a>
+      
+        
+         
 
         <div class="ava">
             <img src="https://api.sololearn.com/Uploads/Avatars/868188.jpg" alt="avatar" style=""/>
         </div>    
-
-    </header>
-   
-    <div class="content">
-        <aside class="info ">
-            <div class="box">
-                <p class="title">
-                    <i class="fa fa-info-circle"></i>Contact me
-                </p>
-
-
-                <p class="padd-top">
-                    
-                    {{theContacter.date}}
-                </p>
-
-                <p>
-                  
-                    {{theContacter.contact}}
-                </p>            
-
-              
-
-                <p>
-                    {{theContacter.address}}
-                </p>     
-
-                <a href="/contact/edit/{{theContacter._id}}">
-                  <button>Edit</button>
-                </a>           
-            </div> 
-
-
-            <div class="box">
-
-                <p class="title" >
-                    <i  class="fa fa-asterisk"></i>
-                    Skill
-                </p>
-
-                <p class="padd-top">HTML, CSS</p>
-                <div class="skill">
-
-                    <div class="skill-right r1"></div>
-                </div>
-
-                <p>JavaScript/jQuery</p>
-                <div class="skill">
-
-                    <div class="skill-right r2"></div>
-                </div>
-
-                <p>PHP, SQL</p>
-                <div class="skill">
-
-                    <div class="skill-right r3"></div>
-                </div>
-            </div>  
-
-        </aside>
-
-        {{!-- <h1>Welcome to the Movie Project</h1>
-<div class="movies-wrapper">
-  {{#each movies}}
-    <div class="movie-item">
-      <img src="{{this.imgPath}}" alt="">
-      <h4>{{this.title}}</h4>
-      <p >{{this.description}}</p>
-    </div>
-  {{else}}
-    <p>There are no movies yet! :(</p>
-  {{/each}}
-</div> --}}
-
-
-        <section class="main">
-            <div class="box">
+<div class="box">
                 <p class="title">
                     <i class="fa fa-graduation-cap"></i>
                     Summary
@@ -110,8 +18,55 @@
                 </p>
             </div>  
 
+       <navbar>
+     <a style="color: black;" href="/logout">Log out</a>
+ </navbar>
 
+ <a href="createPost" id="create-post">
+        Create a post
+         </a>
+
+    </header>
+   
+    <div class="content">
+        <aside class="info ">
             <div class="box">
+                <p class="title">
+                    <i class="fa fa-info-circle"></i>Who is this traveler
+                </p>
+                <p class="padd-top">
+                <p>First Name: {{theUser.firstname}}</p>
+                <p>Last Name: {{theUser.lastname}}</p>
+               <p>Email: {{theUser.email}}</p>
+                <a href="/profiles/edit/{{theUser._id}}">
+           <button>Update</button>
+       </a>     
+            </div> 
+
+
+
+        </aside>
+        <section class="main">
+            {{!-- <div class="box">
+                <p class="title">
+                    <i class="fa fa-graduation-cap"></i>
+                    Summary
+                </p>
+                <p class="padd-top">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, maxime obcaecati enim illo dolorem, recusandae eum! Quasi natus quaerat aspernatur hic, maxime necessitatibus, quo voluptatem veritatis excepturi error sit vero deleniti laborum alias, expedita nostrum. Mollitia doloribus voluptates explicabo quidem.
+                </p>
+            </div>   --}}
+
+
+        <div class="the-main-post">
+           {{#each thePosts}}
+           <img src="{{this.imgPath}}" alt="">
+           <h1> {{this.content}}</h1>
+
+           {{/each}}
+       </div>
+
+            {{!-- <div class="box">
                 <p class="title">
                     <i class="fa fa-flag"></i>
                     activity
@@ -133,8 +88,8 @@
                 <p class="padd-top">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur rem, perspiciatis aliquam amet asperiores earum vero hic ab, minus veritatis. <br>
                 </p>
-            </div>  
-            </div>
+            </div>   --}}
+            {{!-- </div> --}}
 
         </section>
 

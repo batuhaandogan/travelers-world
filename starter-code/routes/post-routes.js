@@ -32,14 +32,14 @@ Post.find()
       
       
 router.post('/createPost', uploadCloud.single('photo'), (req, res, next)=>{
-    const { content } = req.body;
-    const imgPath = req.file.url;
-    const imgName = req.file.originalname;
-    const newPost = new Post({content, imgPath, imgName})
-newPost.save()
+Post.create({
+    content: req.body.content,
+    imgPath: req.file.url,
+})
   .then((response)=>{
       console.log("this is the response=-=-=-=-=-=-=-=-=-=-=-=-=-=",response)
-      res.render('afterlogin/after-login')
+      res.redirect('private')
+    // res.render('afterlogin/after-login',{thePost :response})
   })
   .catch((err)=>{
       console.log('error error error error error error error ',err)

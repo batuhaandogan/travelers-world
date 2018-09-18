@@ -8,7 +8,7 @@ const User = require("../models/user");
 const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 const ensureLogin = require("connect-ensure-login");
-
+const Post = require("../models/post") 
 
 router.get("/signup", (req, res, next) => {
     res.render("auth/signup");
@@ -66,7 +66,11 @@ router.get("/signup", (req, res, next) => {
 
   router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
     console.log(req.user);
-    res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user})
+    Post.find()
+    .then((thePostsIGet)=>{
+      
+      res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet })
+    })
   })
   
   router.post("/login", passport.authenticate("local", {
