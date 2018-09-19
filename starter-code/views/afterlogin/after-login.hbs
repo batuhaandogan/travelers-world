@@ -62,6 +62,14 @@
            {{#each thePosts}}
            <img src="{{this.imgPath}}" alt="">
            <h1> {{this.content}}</h1>
+           <form action="/post/delete/{{this._id}}" method="POST">
+                <button>Delete</button>
+           </form>
+        
+<button id="fetch-new-movie">Fetch New Movie</button><br><br>
+
+<div id="post-here"></div>
+<div id="results"></div>
 <hr>
            {{/each}}
        </div>

@@ -47,4 +47,20 @@ Post.create({
   })
 })
 
+
+router.post('/post/delete/:id', (req, res, next)=>{
+
+    Post.findByIdAndRemove(req.params.id)
+    .then((response)=>{
+        res.redirect('/private')
+    })
+    .catch((err)=>{
+        next(err)
+    })
+
+})
+
+
+
+
 module.exports = router;

@@ -34,15 +34,12 @@ router.get("/signup", (req, res, next) => {
       res.render("auth/signup", { message: "Indicate username and password" });
       return;
     }
-    
     User.findOne({ username })
     .then(user => {
       if (user !== null) {
         res.render("auth/signup", { message: "The username already exists" });
         return;
       } 
-
-
        const salt = bcrypt.genSaltSync(bcryptSalt);
        const hashPass = bcrypt.hashSync(password, salt);
   
