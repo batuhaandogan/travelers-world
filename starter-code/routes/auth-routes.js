@@ -9,6 +9,7 @@ const bcrypt = require("bcryptjs");
 const bcryptSalt = 10;
 const ensureLogin = require("connect-ensure-login");
 const Post = require("../models/post") 
+const Comments = require("../models/comments") 
 const uploadCloud = require('../config/cloudinary.js');
 
 
@@ -70,11 +71,20 @@ router.get("/signup", (req, res, next) => {
 
 
   router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
-    console.log(req.user);
+    // console.log(req.user);
     Post.find({owner:req.user._id})
     .then((thePostsIGet)=>{
-      
-      res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet })
+      Comments.find({post: thePostsIGet._id}).populate('post')
+      .then((theCommentIGet)=>{
+        console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
+        res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet, theComments: theCommentIGet })
+      })
+      .catch((err)=>{
+        next(err)
+      })
+    })
+    .catch((err)=>{
+      next(err)
     })
   })
   

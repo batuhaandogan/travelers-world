@@ -16,14 +16,16 @@ router.get('/createComment', (req, res, next) => {
 
 
      
-router.post('/createComment',  (req, res, next)=>{
+router.post('/createComment/:id',  (req, res, next)=>{
+
     Comments.create({
         content: req.body.content,
-
+        post: req.params.id
     })
       .then((response)=>{
           console.log("this is the comment=-=-=-=-=-=-=-=-=-=-=-=-=-=",response)
-          res.render('afterlogin/after-login',{theComments:response})
+          
+          res.redirect('/private')
         // res.render('afterlogin/after-login',{thePost :response})
       })
       .catch((err)=>{
