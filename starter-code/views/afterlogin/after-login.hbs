@@ -66,7 +66,23 @@
                 <button>Delete</button>
            </form>
         
-<button id="fetch-new-movie">Fetch New Movie</button><br><br>
+<button id="create-button">Comment it</button>
+
+<div id ='createCommentFormDiv' >
+
+ <form action="createComment" method="POST">
+  <label for="content">content</label>
+<input type="string" name="content">
+  <label for="star">star</label>
+<input type="string" name="star">
+
+
+<button>create</button>
+ </form>
+ </div>
+{{#each Comments}}
+{{this.content}}
+{{/each}}
 
 <div id="post-here"></div>
 <div id="results"></div>
@@ -100,6 +116,24 @@
             {{!-- </div> --}}
 
         </section>
+<script>
 
+const createCommentButton = document.getElementById('create-button')
+
+function toogle (){
+  const divForm= document.getElementById("createCommentFormDiv")
+  console.log('toggleform')
+  if (divForm.style.display === "block") {
+    divForm.style.display = "none";
+} else {
+  divForm.style.display = "block";
+}
+
+}
+createCommentButton.onclick= toogle
+
+
+</script>
     </div>
+    
     <footer>    </footer>

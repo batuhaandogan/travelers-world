@@ -109,11 +109,12 @@ app.use('/', index);
 const authRoutes = require("./routes/auth-routes");
 app.use('/', authRoutes);
 
+const comments = require('./routes/comments-routes')
+app.use('/', comments)
+
 const post = require('./routes/post-routes')
 app.use('/', post)
 
-const comments = require('./routes/comments-routes')
-app.use('/', comments)
 
 
 
