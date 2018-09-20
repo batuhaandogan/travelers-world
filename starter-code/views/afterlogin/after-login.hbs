@@ -113,6 +113,7 @@ createCommentButton.onclick= toogle
 <div class="first-class">
     
       <div class="important-class-one">
+          <h1>Who is this traveler?</h1>
     <p>First Name: {{theUser.firstname}}</p>
                 <p>Last Name: {{theUser.lastname}}</p>
                <p>Email: {{theUser.email}}</p>
@@ -182,11 +183,9 @@ createCommentButton.onclick= toogle
                 <div id ='createCommentFormDiv' >
 
                 <form action="/createComment/{{this._id}}" method="POST">
+
                 <label for="content">content</label>
-                <input type="string" name="content">
-              
-
-
+                <input id="content" type="text" name="content">
 
                 <button>create</button>
                 </form>
@@ -197,10 +196,14 @@ createCommentButton.onclick= toogle
                 <div id="post-here"></div>
                 <div id="results"></div>
                 <hr>
+                <br />
            {{/each}}
+           <div class="center">
                 {{#each theComments}}
-                    {{this.content}}
+                    <p>{{this.content}}</p>
+                    <br />
                 {{/each}}
+           </div>
            </div>
 
 

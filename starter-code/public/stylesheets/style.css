@@ -866,7 +866,16 @@ button {
   border-radius: 20px; }
 
 .important-class-one {
+  background-color: rgba(25, 25, 25, 0.05);
   position: absolute;
+  top: 100px;
+  left: 20px;
   z-index: 20; }
+
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
 
 /*# sourceMappingURL=style.css.map */
