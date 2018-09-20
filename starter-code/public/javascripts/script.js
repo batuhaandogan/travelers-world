@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  document.getElementById('fetch-new-movie').onclick = () => {
+  document.getElementById('create-button').onclick = () => {
     axios.get('http://localhost:3000/private')
     .then((createThings)=>{
 
