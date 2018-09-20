@@ -5,7 +5,7 @@
                 {{this.content}}
                 {{/each}} --}}
 
- <header>
+ {{!-- <header>
          
 
         <div class="ava">
@@ -22,12 +22,10 @@
             </div>  
 
        <navbar>
-     <a style="color: black;" href="/logout">Log out</a>
+  
  </navbar>
 
- <a href="createPost" id="create-post">
-        Create a post
-         </a>
+ 
 
     </header>
    
@@ -50,15 +48,7 @@
 
         </aside>
         <section class="main">
-            {{!-- <div class="box">
-                <p class="title">
-                    <i class="fa fa-graduation-cap"></i>
-                    Summary
-                </p>
-                <p class="padd-top">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, maxime obcaecati enim illo dolorem, recusandae eum! Quasi natus quaerat aspernatur hic, maxime necessitatibus, quo voluptatem veritatis excepturi error sit vero deleniti laborum alias, expedita nostrum. Mollitia doloribus voluptates explicabo quidem.
-                </p>
-            </div>   --}}
+        
 
 
         <div class="the-main-post">
@@ -76,8 +66,7 @@
                 <form action="/createComment/{{this._id}}" method="POST">
                 <label for="content">content</label>
                 <input type="string" name="content">
-                {{!-- <label for="star">star</label>
-                <input type="string" name="star"> --}}
+              
                 <h1>This is the comments: </h1>
                 {{#each theComments}}
                 {{this.content}}
@@ -87,40 +76,13 @@
                 <button>create</button>
                 </form>
                 </div>
-                {{!-- {{#each theComments}}
-                {{this.content}}
-                {{/each}} --}}
+                
 
                 <div id="post-here"></div>
                 <div id="results"></div>
                 <hr>
            {{/each}}
        </div>
-
-            {{!-- <div class="box">
-                <p class="title">
-                    <i class="fa fa-flag"></i>
-                    activity
-                </p>
-                <br>
-                <p class="padd-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur rem, perspiciatis aliquam amet asperiores earum vero hic ab, minus veritatis. 
-                </p>
-            </div>  
-
-
-
-            <div>
-                <div class="box">
-                <p class="title">
-                    <i class="fa fa-crosshairs" aria-hidden="true"></i>
-                Career goals
-                </p>
-                <br>
-                <p class="padd-top">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur rem, perspiciatis aliquam amet asperiores earum vero hic ab, minus veritatis. <br>
-                </p>
-            </div>   --}}
-            {{!-- </div> --}}
 
         </section>
 <script>
@@ -145,7 +107,101 @@ createCommentButton.onclick= toogle
     
     <footer>    </footer>
 
+ --}}
 
 
-  
-		
+<div class="first-class">
+    
+      <div class="important-class-one">
+    <p>First Name: {{theUser.firstname}}</p>
+                <p>Last Name: {{theUser.lastname}}</p>
+               <p>Email: {{theUser.email}}</p>
+                <a href="/profiles/edit/{{theUser._id}}">
+           <button>Update</button>
+       </a>     
+
+    </div>
+   
+  <div class="photo-class">
+      
+            <img src="{{theUser.imgPath}}" alt="avatar" style=""/>
+            
+        </div>  
+     
+
+        <div>
+            <img src="./images/walkerlogo.png" id="walker-logo">
+        </div>
+        
+</div>
+            <p id="walker-logo-follow">Who is this <br><strong> Traveler?</strong></p>
+
+
+<div class="move-this-class">
+        <details>
+    <summary>This novel, which is definitely not a quick read, is considered 
+        an Oulipian work. Oulipo, the acronomym for Ouvrior de Littérature Potentielle
+         (Workshop of Potential Literature), was founded on November 24, 1960, in France 
+        <br> <strong>What are the places I still want to see?</strong>
+    </summary>
+       Madrid<br>Sydney
+
+       </details>
+
+
+
+</div>
+<div class="create-diff-post">
+<button class="w3-button w3-circle w3-black">+</button>
+<strong><a href="createPost" id="create-post">Share what you've done so far</a></strong>
+
+ 
+
+</div>
+    
+
+<div class="poster-class">
+
+
+    {{#each thePosts}}
+           <img src="{{this.imgPath}}" alt="">
+           <div class="fixing-the-class">
+           <p> {{this.content}}</p>
+
+           </div>
+           <form action="/post/delete/{{this._id}}" method="POST">
+           <div class="first-button-one">
+
+                <button class="w3-button w3-ripple w3-red">Delete</button>
+           </div>
+           </form>
+        <div class="second-button-two">
+
+                <button class="w3-btn w3-teal" id="create-button">Give a comment</button>
+
+                <div id ='createCommentFormDiv' >
+
+                <form action="/createComment/{{this._id}}" method="POST">
+                <label for="content">content</label>
+                <input type="string" name="content">
+              
+
+
+
+                <button>create</button>
+                </form>
+                </div>
+        </div>
+                
+
+                <div id="post-here"></div>
+                <div id="results"></div>
+                <hr>
+           {{/each}}
+                {{#each theComments}}
+                    {{this.content}}
+                {{/each}}
+           </div>
+
+
+      

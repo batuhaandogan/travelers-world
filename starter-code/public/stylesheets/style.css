@@ -2,12 +2,10 @@ a {
   color: #00B7FF;
   text-decoration: none; }
 
-/*style.css*/
 * {
   position: relative;
   box-sizing: border-box;
-  font-size: 20px;
-  font-family: fantasy; }
+  font-size: 20px; }
 
 .content {
   max-width: 1110px;
@@ -202,11 +200,6 @@ header {
 footer {
   flex-shrink: 0; }
 
-#create-post {
-  padding-left: 300px;
-  font-size: 30px;
-  color: red; }
-
 .the-main-post {
   border: 1px solid white;
   background-color: rgba(113, 154, 221, 0.2); }
@@ -217,7 +210,10 @@ footer {
   padding-left: 73px; }
 
 hr {
-  border: 10px solid black; }
+  border: 1px solid black;
+  width: 550px;
+  left: 412px;
+  top: 25px; }
 
 @font-face {
   font-family: Ubuntu-Regular;
@@ -240,8 +236,6 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-  font-family: Ubuntu-Regular;
-  font-size: 14px;
   line-height: 1.7;
   color: #666666;
   margin: 0px;
@@ -262,8 +256,6 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0px; }
 
 p {
-  font-family: Ubuntu-Regular;
-  font-size: 14px;
   line-height: 1.7;
   color: #666666;
   margin: 0px; }
@@ -771,7 +763,7 @@ label {
     color: #787878; }
 
 .simple-class-one {
-  background-image: url("../images/nature.jpg");
+  background-image: url("../images/aroundtheworld.jpg");
   background-repeat: no-repeat;
   height: 1400px;
   background-size: contain;
@@ -783,16 +775,98 @@ label {
   left: 0; }
 
 .fix-this-landing {
-  padding-left: 620px;
-  padding-top: 100px; }
+  padding-top: 30px;
+  padding-left: 50px; }
 
 a {
-  color: brown;
-  font-family: 'Times New Roman', Times, serif; }
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #001f3f; }
 
 #traveler-logo {
   height: 200px;
   padding-left: 500px;
   padding-top: 100px; }
+
+.first-class {
+  background-color: turquoise;
+  height: 180px; }
+
+.photo-class {
+  padding-left: 500px;
+  padding-top: 50px; }
+
+.photo-class > img {
+  height: 300px;
+  border: 1px solid white;
+  border-radius: 150px; }
+
+#walker-logo {
+  padding-left: 550px;
+  height: 150px; }
+
+#walker-logo-follow {
+  padding-left: 700px;
+  padding-top: 220px; }
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em 0; }
+
+summary {
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em; }
+
+details[open] {
+  padding: .5em; }
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em; }
+
+.move-this-class {
+  padding-left: 10px;
+  padding-top: 50px; }
+
+.create-diff-post {
+  padding-left: 600px;
+  padding-top: 20px; }
+
+img {
+  height: 500px; }
+
+.poster-class {
+  padding-top: 50px; }
+
+.poster-class > h1 {
+  color: black; }
+
+.poster-class > img {
+  margin-left: 320px;
+  border: 1px solid white;
+  border-radius: 200px; }
+
+button {
+  border-radius: 20px; }
+
+.first-button-one {
+  top: 10px;
+  padding-left: 650px; }
+
+.second-button-two {
+  top: 20px;
+  padding-left: 610px;
+  bottom: 20px; }
+
+.fixing-the-class {
+  width: 600px;
+  margin-left: 405px;
+  margin-top: 20px;
+  border-radius: 20px; }
+
+.important-class-one {
+  position: absolute;
+  z-index: 20; }
 
 /*# sourceMappingURL=style.css.map */

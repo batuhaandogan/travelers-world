@@ -8,48 +8,11 @@ a {
 
 }
 
-
-// !!!!!!!!!!!!!!!!
-
-
-// html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
-// body{margin:0}
-// article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary{display:block}
-// audio,canvas,progress,video{display:inline-block}progress{vertical-align:baseline}
-// audio:not([controls]){display:none;height:0}[hidden],template{display:none}
-// a{background-color:transparent;-webkit-text-decoration-skip:objects}
-// a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}
-// dfn{font-style:italic}mark{background:#ff0;color:#000}
-// small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
-// sub{bottom:-0.25em}sup{top:-0.5em}figure{margin:1em 40px}img{border-style:none}svg:not(:root){overflow:hidden}
-// pre {font-family:monospace,monospace;font-size:1em;}
-// kbd {font-family:monospace,monospace; font-size:1em; background: lightgray; color: red; padding: 3px; border-radius: 3px;}
-// code,samp{font-family:monospace,monospace;font-size:1em;}
-// hr{box-sizing:content-box;height:0;overflow:visible;}
-// button,input,select,textarea{font:inherit;margin:0}optgroup{font-weight:bold}
-// button,input{overflow:visible}button,select{text-transform:none}
-// button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}
-// button::-moz-focus-inner, [type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner{border-style:none;padding:0}
-// button:-moz-focusring, [type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring{outline:1px dotted ButtonText}
-// fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}
-// legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}
-// [type=checkbox],[type=radio]{padding:0}
-// [type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}
-// [type=search]{-webkit-appearance:textfield;outline-offset:-2px}
-// [type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}
-// ::-webkit-input-placeholder{color:inherit;opacity:0.54}
-// ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
-// html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
-// h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}.w3-serif{font-family:serif}
-// h1,h2,h3,h4,h5,h6{font-family: 'Roboto Slab', serif;font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
-// hr{border:0;border-top:1px solid #eee;margin:20px 0}
-
-/*style.css*/
 *{
    position:relative ; 
    box-sizing:border-box;
    font-size: 20px;
-   font-family: fantasy;
+  //  font-family: fantasy;
 }
 .content {
    max-width: 1110px;
@@ -283,11 +246,11 @@ footer{
 }
 
 
-#create-post {
-  padding-left: 300px;
-font-size: 30px;
- color: red;
-}
+// #create-post {
+//   padding-left: 300px;
+// font-size: 30px;
+//  color: red;
+// }
 
 
 .the-main-post {
@@ -304,7 +267,10 @@ font-size: 30px;
 
 
 hr {
-  border: 10px solid black
+  border: 1px solid black;
+width: 550px;
+left: 412px;
+top: 25px;
 }
 
 
@@ -338,8 +304,8 @@ body, html {
 
 /*---------------------------------------------*/
 a {
-	font-family: Ubuntu-Regular;
-	font-size: 14px;
+	// font-family: Ubuntu-Regular;
+	// font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
 	margin: 0px;
@@ -364,8 +330,8 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 p {
-	font-family: Ubuntu-Regular;
-	font-size: 14px;
+	// font-family: Ubuntu-Regular;
+	// font-size: 14px;
 	line-height: 1.7;
 	color: #666666;
 	margin: 0px;
@@ -912,7 +878,7 @@ label {
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!================!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 .simple-class-one {
-  background-image: url('../images/nature.jpg');
+  background-image: url('../images/aroundtheworld.jpg');
   background-repeat: no-repeat;
   height: 1400px;  
   background-size: contain;
@@ -923,18 +889,24 @@ label {
 
 
 .fix-this-landing {
-  padding-left: 620px;  
-  padding-top: 100px;
-  
+  // padding-left: 620px;  
+  padding-top: 30px;
+  padding-left: 50px;
+  // color: brown;
+  // background-color: turquoise;
+  // width: 250px;
+  // height: 200px;
 }
 
 
 
 a  {
-  color: brown;
+  // color: brown;
 // border: 3px solid turquoise;
 // border-radius: 10px;
-font-family: 'Times New Roman', Times, serif;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+// font-size: 15px;
+color: #001f3f;
 // background-color: turquoise;
 }
 
@@ -949,3 +921,124 @@ font-family: 'Times New Roman', Times, serif;
 //!!!!!!!!!!!!!!!!!!++!+!!++!+++!!+!++!!+\
 
 
+.first-class {
+  background-color: turquoise;
+  height: 180px;
+}
+
+.photo-class {
+  padding-left: 500px;
+  padding-top: 50px;
+}
+
+.photo-class > img {
+  height: 300px;
+  border: 1px solid white;
+  border-radius: 150px;
+}
+
+
+#walker-logo {
+  padding-left: 550px;
+  height: 150px;
+}
+
+#walker-logo-follow {
+  padding-left: 700px;
+padding-top: 220px;
+  // position: absolute;
+
+}
+
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+}
+
+summary {
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em;
+}
+
+details[open] {
+  padding: .5em;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: .5em;
+}
+
+
+.move-this-class {
+  padding-left: 10px;
+  padding-top: 50px;
+}
+
+.create-diff-post {
+  padding-left: 600px;
+  padding-top: 20px;
+}
+
+img {
+  height: 500px;
+}
+
+
+.poster-class {
+  // padding-left: 10px;
+  padding-top: 50px;
+}
+
+.poster-class > h1 {
+  color: black;
+}
+
+.poster-class > img {
+//  padding-left: 300px;
+margin-left: 320px;
+ border: 1px solid white;
+ border-radius: 200px;
+}
+
+
+button {
+  border-radius: 20px;
+
+}
+
+
+.first-button-one {
+  top: 10px;
+  padding-left: 650px;
+
+}
+
+.second-button-two {
+  top: 20px;
+  padding-left: 610px;
+  bottom: 20px;
+}
+
+
+.fixing-the-class {
+width: 600px; 
+  // background-color: black;
+  margin-left: 405px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+
+.important-class-one {
+  // background-color: black;
+  // width:250px;
+  // padding-top:
+  position: absolute;
+  // top: 100px;
+  // left: 20px;
+  z-index: 20;
+  
+}
