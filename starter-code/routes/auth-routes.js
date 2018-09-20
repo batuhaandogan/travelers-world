@@ -75,10 +75,10 @@ router.get("/signup", (req, res, next) => {
     
     Post.find({owner:req.user._id})
     .then((thePostsIGet)=>{
-      // console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
-      Comments.find({post: thePostsIGet._id}).populate('post')
+      console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
+      Comments.find({post: thePostsIGet[0]._id}).populate('post')
       .then((theCommentIGet)=>{
-        // console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
+        console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
         res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet, theComments: theCommentIGet })
       })
       .catch((err)=>{
