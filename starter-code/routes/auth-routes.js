@@ -72,14 +72,14 @@ router.get("/signup", (req, res, next) => {
 
   router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
     // console.log(req.user);
+    
     Post.find({owner:req.user._id})
     .then((thePostsIGet)=>{
-      // var random = Math.floor(Math.random() * thePostsIGet.length);
       console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
       Comments.find({post: thePostsIGet[0]._id}).populate('post')
       .then((theCommentIGet)=>{
         console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
-        res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet[0], theComments: theCommentIGet })
+        res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet, theComments: theCommentIGet })
       })
       .catch((err)=>{
         next(err)
