@@ -1,30 +1,30 @@
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
 
-  document.getElementById('create-button').onclick = () => {
-    axios.get('http://localhost:3000/private')
-    .then((createThings)=>{
+//   document.getElementById('create-button').onclick = () => {
+//     axios.get('http://localhost:3000/private')
+//     .then((createThings)=>{
 
-console.log(createThings,'======2=2=2=2==2=2=2=2=2')
-
-     
-      const resultDiv = document.getElementById('post-here')
+// console.log(createThings,'======2=2=2=2==2=2=2=2=2')
 
      
+//       const resultDiv = document.getElementById('post-here')
 
-        console.log(createThings)
-        resultDiv.innerHTML += `
      
-        <textarea name="comment" form="usrform">Enter text here...</textarea>
-        `
-        // fetchAllMovies();
 
-      })
-    .catch((err)=>{
-      console.log(err)
-    })
+//         console.log(createThings)
+//         resultDiv.innerHTML += `
+     
+//         <textarea name="comment" form="usrform">Enter text here...</textarea>
+//         `
+//         // fetchAllMovies();
+
+//       })
+//     .catch((err)=>{
+//       console.log(err)
+//     })
 
 
-  }
+//   }
 
 //button for comment creation
 
@@ -62,5 +62,5 @@ console.log(createThings,'======2=2=2=2==2=2=2=2=2')
 	
 // })(jQuery);
 
-}, false);
+// }, false);
 
