@@ -38,7 +38,7 @@ Post.create({
 })
   .then((response)=>{
       console.log("this is the response=-=-=-=-=-=-=-=-=-=-=-=-=-=",response)
-      res.redirect('private')
+      res.redirect('/private')
     // res.render('afterlogin/after-login',{thePost :response})
   })
   .catch((err)=>{

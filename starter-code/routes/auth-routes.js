@@ -68,7 +68,7 @@ router.get("/signup", (req, res, next) => {
   router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
     // console.log(req.user);
     
-    Post.find({owner:req.user._id})
+    Post.find({owner:req.user._id}).populate('comments')
     .then((thePostsIGet)=>{
       // console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
       // Comments.find({post: thePostsIGet[0]._id}).populate('post')

@@ -56,7 +56,7 @@
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wow{{@index}}">
   <img src="{{this.imgPath}}" alt="">
 </button>
-
+<br><br>
 <!-- Modal -->
 <div class="modal fade" id="wow{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -99,10 +99,10 @@
                 <hr>
                 <br />
            <div class="center">
-                {{!-- {{#each ../theComments}}
+                {{#each this.comments}}
                     <p>{{this.content}}</p>
                     <br />
-                {{/each}} --}}
+                {{/each}}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -115,44 +115,6 @@
 
            {{/each}}
 
-           {{!-- <img src="{{this.imgPath}}" alt=""> --}}
-           {{!-- <div class="fixing-the-class">
-           <p> {{this.content}}</p>
-
-           </div> --}}
-           {{!-- <form action="/post/delete/{{this._id}}" method="POST">
-           <div class="first-button-one">
-
-                <button class="w3-button w3-ripple w3-red">Delete</button>
-           </div>
-           </form> --}}
-        {{!-- <div class="second-button-two">
-
-                <button class="w3-btn w3-teal" id="create-button">Give a comment</button>
-
-                <div id ='createCommentFormDiv' >
-
-                <form action="/createComment/{{this._id}}" method="POST">
-
-                <label for="content">content</label>
-                <input id="content" type="text" name="content">
-
-                <button>create</button>
-                </form>
-                </div>
-        </div> --}}
-                
-
-                {{!-- <div id="post-here"></div>
-                <div id="results"></div>
-                <hr>
-                <br />
-           {{/each}}
-           <div class="center">
-                {{#each theComments}}
-                    <p>{{this.content}}</p>
-                    <br />
-                {{/each}} --}}
            </div>
 
 
