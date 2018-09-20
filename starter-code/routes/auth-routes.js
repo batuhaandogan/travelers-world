@@ -65,29 +65,24 @@ router.get("/signup", (req, res, next) => {
   });  
 
 
-
-
- 
-
-
   router.get('/private' , ensureLogin.ensureLoggedIn('/login'),(req, res, next)=>{
     // console.log(req.user);
     
     Post.find({owner:req.user._id})
     .then((thePostsIGet)=>{
-      console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
-      Comments.find({post: thePostsIGet[0]._id}).populate('post')
-      .then((theCommentIGet)=>{
-        console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
-        res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet, theComments: theCommentIGet })
+      // console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
+      // Comments.find({post: thePostsIGet[0]._id}).populate('post')
+      // .then((theCommentIGet)=>{
+        // console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
+        res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet})
       })
       .catch((err)=>{
         next(err)
       })
-    })
-    .catch((err)=>{
-      next(err)
-    })
+    // })
+    // .catch((err)=>{
+    //   next(err)
+    // })
   })
   
   router.post("/login", passport.authenticate("local", {
