@@ -16,6 +16,7 @@ const userSchema = new Schema({
   address: String,
   imgName: String,
   imgPath: String,
+  currentlyLiving: String,
   post: {type: Schema.Types.ObjectId, ref: "post"},
 }, {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

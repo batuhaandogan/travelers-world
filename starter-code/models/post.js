@@ -3,10 +3,8 @@ const Schema   = mongoose.Schema;
 
 
 const postSchema = new Schema({
-//   picture:String,
   content: String,
   comments:  [{type: Schema.Types.ObjectId, ref: "Comments"}],
-  // comments: [String],
   imgName: String,
   imgPath: String,
   owner: {type: Schema.Types.ObjectId, ref: "User"}

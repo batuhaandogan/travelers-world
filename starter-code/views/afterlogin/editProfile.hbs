@@ -1,7 +1,8 @@
-<h2>Edit your profile</h2><br>
 
 
-<form action="/profiles/edit/{{profile._id}}" method="POST">
+<h2 style="color: black; margin-left: 620px; top: 25px">Edit your profile</h2>
+<form class="edit-profile" action="/profiles/edit/{{profile._id}}" method="POST">
+
 
 
     <label for="">First name</label>
@@ -13,16 +14,18 @@
     <label for="">Email</label>
     <input type="email" name="email" value="{{profile.email}}">
 
-     <label>Poster</label>
-  <input type="file" name="photo" alt="">
+    <label for="">Where are you living?</label>
+    <input type="text" name="currentlyLiving" value="{{profile.currentlyLiving}}">
 
-    <button>Submit</button>
+     
+<br><br>
+    <button style="color: white;">Submit</button>
 
 
+{{!-- <br><br> --}}
+{{!-- <a href="/private">Profile</a> --}}
 </form>
 {{!-- <a href="/private"> --}}
 {{!-- </a> --}}
-<br>
-<a href="/private">Profile</a>
 
 

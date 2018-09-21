@@ -29,6 +29,7 @@ router.get("/signup", (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
     const email = req.body.email;
+    const currentlyLiving = req.body.currentlyLiving;
     // const image: req.file.url,
     // const imgPath: req.file.originalname,
     if (username === "" || password === "") {
@@ -50,7 +51,8 @@ router.get("/signup", (req, res, next) => {
             email: email,
             username: username,
             imgPath: req.file.url,
-            password: hashPass
+            password: hashPass,
+            currentlyLiving: currentlyLiving,
         })
         .then((response)=>{
           res.redirect("/");
@@ -70,10 +72,7 @@ router.get("/signup", (req, res, next) => {
     
     Post.find({owner:req.user._id}).populate('comments')
     .then((thePostsIGet)=>{
-      // console.log("id of the posts ------------------------ ", thePostsIGet[0]._id)
-      // Comments.find({post: thePostsIGet[0]._id}).populate('post')
-      // .then((theCommentIGet)=>{
-        // console.log("THE COMMENTS=-=-=-=-=-=-=-=-=-=", theCommentIGet)
+     
         res.render('afterlogin/after-login', {message: req.flash('success'), theUser: req.user, thePosts: thePostsIGet})
       })
       .catch((err)=>{
@@ -112,6 +111,7 @@ const updates = {
   firstname: req.body.firstname,
   lastname: req.body.lastname,
   email: req.body.email,
+  currentlyLiving: req.body.currentlyLiving,
 }
 if(req.file){
   updates.imgPath = req.body.url

@@ -1,10 +1,11 @@
 <div class="first-class">
-    
+    <a href="/logout">Logout</a>
       <div class="important-class-one">
           <h1>Who is this traveler?</h1>
-    <p>First Name: {{theUser.firstname}}</p>
-                <p>Last Name: {{theUser.lastname}}</p>
-               <p>Email: {{theUser.email}}</p>
+           <p>First Name: {{theUser.firstname}}</p>
+           <p>Last Name: {{theUser.lastname}}</p>
+           <p>Email: {{theUser.email}}</p>
+           <p>Place of living: {{theUser.currentlyLiving}}</p>
                 <a href="/profiles/edit/{{theUser._id}}">
            <button>Update</button>
        </a>     
@@ -23,7 +24,7 @@
         </div>
         
 </div>
-            <p id="walker-logo-follow">Who is this <br><strong> Traveler?</strong></p>
+            <p id="walker-logo-follow">Where you been <br><strong> Traveler?</strong></p>
 
 
 <div class="move-this-class">
@@ -53,7 +54,7 @@
 
     {{#each thePosts}}
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#wow{{@index}}">
+<button type="button" class="btn btn-primary second-primary" data-toggle="modal" data-target="#wow{{@index}}">
   <img src="{{this.imgPath}}" alt="">
 </button>
 <br><br>
@@ -106,7 +107,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        {{!-- <button type="button" class="btn btn-primary second-primary">Save changes</button> --}}
       </div>
     </div>
   </div>
