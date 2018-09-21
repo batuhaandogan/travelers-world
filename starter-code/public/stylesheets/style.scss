@@ -975,6 +975,7 @@ details[open] summary {
 
 .move-this-class {
   padding-left: 10px;
+  // right: 100px;
   padding-top: 50px;
 }
 
@@ -984,7 +985,7 @@ details[open] summary {
 }
 
 img {
-  height: 500px;
+  // height: 500px;
 }
 
 
@@ -1013,24 +1014,24 @@ button {
 
 .first-button-one {
   top: 10px;
-  padding-left: 650px;
+  // padding-left: 650px;
 
 }
 
-.second-button-two {
-  top: 20px;
-  padding-left: 610px;
-  bottom: 20px;
-}
+// .second-button-two {
+//   top: 20px;
+//   // padding-left: 610px;
+//   bottom: 20px;
+// }
 
 
-.fixing-the-class {
-width: 600px; 
+// .fixing-the-class {
+// width: 600px; 
   // background-color: black;
-  margin-left: 405px;
-  margin-top: 20px;
-  border-radius: 20px;
-}
+  // margin-left: 405px;
+//   margin-top: 20px;
+//   border-radius: 20px;
+// }
 
 .important-class-one {
   background-color: rgba(25,25,25,0.05);
@@ -1045,6 +1046,7 @@ width: 600px;
 
 .center {
   display: flex;
+  position: relative;
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -1266,3 +1268,53 @@ position: relative;
   background-image: url('../images/pusula.jpg')
 }
 
+
+
+.fix-modal {
+  height: 1000px;
+  width: 1036px;
+  right: 300px;
+}
+
+
+.fix-modal-body {
+  margin-bottom: 7%;
+  background-color: gray;
+}
+
+// .fix-modal-header {
+//   background-color: black;
+// }
+
+
+.modalImg{
+  height: 300px;
+  width: 300px;
+}
+#modalDescription{
+ margin-top: 20px; 
+  height: 300px;
+  width: 300px;
+}
+#createCommentFormDiv{
+  top:100px;
+  left: 109px;
+position: relative;
+
+}
+.commentsspace{
+  left:30px;
+  margin-top: 300px;
+  position: relative;
+}
+
+
+img {
+  height: 400px;
+  width: 500px;
+}
+
+
+// .modal-footer {
+  // widows: 200px;
+// }

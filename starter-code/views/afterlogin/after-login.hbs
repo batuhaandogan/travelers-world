@@ -59,45 +59,52 @@
 </button>
 <br><br>
 <!-- Modal -->
-<div class="modal fade" id="wow{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade top-modal" id="wow{{@index}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="row">
   <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+    <div class="modal-content fix-modal">
+      <div class="modal-header fix-modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body center">
-          <img src="{{this.imgPath}}" alt="">
-       <div class="fixing-the-class">
-           <p> {{this.content}}</p>
+      <div class="modal-body center fix-modal-body">
 
+         <div class="row">{{!--inside of the modal--}}
+           <div class="col-sm-6">
+          <img id ="modalImg" src="{{this.imgPath}}" alt="">
+       <div class="fixing-the-class">
+           <p id="modalDescription"> {{this.content}}</p>
            </div>
+
+           {{!-- form delete --}}
             <form action="/post/delete/{{this._id}}" method="POST">
            <div class="first-button-one">
-
                 <button class="w3-button w3-ripple w3-red">Delete</button>
            </div>
            </form>
+           </div>
+
+
+
+           <div class="col-sm-6">
+        
             <div class="second-button-two">
-
                 {{!-- <button class="w3-btn w3-teal" id="create-button">Give a comment</button> --}}
-
-                <div id ='createCommentFormDiv' >
-
+                <div id ="createCommentFormDiv">
                 <form action="/createComment/{{this._id}}" method="POST">
-
                 <label for="content">content</label>
                 <input id="content" type="text" name="content">
-
                 <button>create</button>
                 </form>
                 </div>
-        </div>
+           </div>
+
+<div class="commentsspace">
           <div id="post-here"></div>
                 <div id="results"></div>
-                <hr>
+                {{!-- <hr> --}}
                 <br />
            <div class="center">
                 {{#each this.comments}}
@@ -105,17 +112,20 @@
                     <br />
                 {{/each}}
       </div>
-      <div class="modal-footer">
+      </div>
+      <div class="modal-footer third-class">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         {{!-- <button type="button" class="btn btn-primary second-primary">Save changes</button> --}}
       </div>
+</div>
     </div>
   </div>
 </div>
 </div>
+</div> 
+           </div> 
 
            {{/each}}
 
-           </div>
 
 
